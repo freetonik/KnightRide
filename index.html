@@ -419,6 +419,7 @@
             currentScore: 0, // Score for current level
             highScore: 0,
             movesLeft: 0,
+            streak: 0,
             knightPosition: null,
             targetPosition: null,
             selectedPiece: null,
@@ -730,13 +731,9 @@
             const capturePiece = newCell.querySelector('.piece:not([data-type="knight"])');
             let capturePoints = 0;
             let capturePieceType = null;
-
+            // update state
             if (capturePiece) {
-                capturePieceType = capturePiece.dataset.type;
-                capturePoints = gameState.pieceValues[capturePieceType];
                 newCell.removeChild(capturePiece);
-
-                // Remove from pieces array
                 gameState.pieces = gameState.pieces.filter(p =>
                     !(p.row === row && p.col === col));
             }
@@ -749,26 +746,30 @@
             if (!capturePiece && attackingPieces.length > 0) {
                 // Calculate attack points
                 attackPoints = 1; // for now just 1 flat point if under attack
-                if ( !(row === gameState.targetPosition.row && col === gameState.targetPosition.col))
+                if ( !(row === gameState.targetPosition.row && col === gameState.targetPosition.col)) {
                     playSound('damage');
-                // Maybe sum of all attacking pieces?
-                // attackPoints = attackingPieces.reduce((sum, piece) => {
-                //     return sum + gameState.pieceValues[piece.type];
-                // }, 0);
+                    gameState.currentScore -= 1;
+                    showPointsIndicator(newCell, -1);
+                }
             }
 
-            // Calculate net points
-            const netPoints = capturePoints - attackPoints;
-
-            // Update current score
-            if (netPoints !== 0) {
-                gameState.currentScore += netPoints;
-                showPointsIndicator(newCell, netPoints);
-            }
 
             // CAPTURE!
             if (capturePiece) {
+                capturePieceType = capturePiece.dataset.type;
+                capturePoints = gameState.pieceValues[capturePieceType];
+
                 gameState.movesLeft += 1;
+
+                gameState.currentScore += capturePoints;
+                gameState.streak += 1;
+
+                if (gameState.streak > 1) {
+                    gameState.currentScore += gameState.streak;
+                    showPointsIndicator(newCell, `${capturePoints} + ${gameState.streak} streak`, true);
+                } else {
+                    showPointsIndicator(newCell, capturePoints);
+                }
 
                 playSound('capture')
 
@@ -784,7 +785,9 @@
                     }
                 }, 1300);
             } else {
-                // Play regular move sound (except for target square which has its own win sound)
+                // NOT CAPTURE, JUST MOVE
+                gameState.streak = 0; // reset streak
+                // Play move sound only if not attacked and if not at target (both have its own sound)
                 if (!(row === gameState.targetPosition.row && col === gameState.targetPosition.col) && attackPoints === 0) {
                     playSound('move')
                 }
@@ -818,22 +821,33 @@
                 if (row === gameState.targetPosition.row && col === gameState.targetPosition.col) {
                     playSound('win')
 
+                    let cleanBoardBonusMultiplier = 1
+                    if (gameState.pieces.length === 0) cleanBoardBonusMultiplier = 2;
+
+
                     let levelScore = 1;
 
                     let bonusMultiplier = gameState.movesLeft; // TODO: maybe don't count the last move?
                     if (bonusMultiplier === 0) bonusMultiplier = 1; // at least 1x bonus
 
                     // Ensure current score is at least 1 before applying multiplier
-                    if (gameState.currentScore > 1)
-                        levelScore = gameState.currentScore * bonusMultiplier;
+                    if (gameState.currentScore > 0)
+                        levelScore = gameState.currentScore * bonusMultiplier * cleanBoardBonusMultiplier;
                     else
-                        levelScore = 1 * bonusMultiplier;
+                        levelScore = 0;
 
                     // Show score×multiplier indicator
-                    if (gameState.currentScore > 1 && bonusMultiplier > 0)
-                        showPointsIndicator(newCell, `${gameState.currentScore}×${bonusMultiplier}`, true);
-                    else
+                    if (gameState.currentScore > 1 && bonusMultiplier > 0) {
+                        if (cleanBoardBonusMultiplier > 0) {
+                            showPointsIndicator(newCell, `${gameState.currentScore}×${bonusMultiplier}×${cleanBoardBonusMultiplier} CLEAN BOARD!`, true);
+                        } else {
+                            showPointsIndicator(newCell, `${gameState.currentScore}×${bonusMultiplier}`, true);
+                        }
+                    }
+
+                    else {
                         showPointsIndicator(newCell, levelScore);
+                    }
 
                     // Update total score with the level score
                     gameState.score += levelScore;
