@@ -299,6 +299,7 @@
             }
         }
     </style>
+    <script src="js/soundjs.min.js"></script>
 </head>
 <body>
     <div id="start-screen" class="screen active">
@@ -430,17 +431,17 @@
             },
             possibleMoves: [],
             sounds: {
-                capture1: new Audio('assets/sounds/capture1.mp3'),
-                capture2: new Audio('assets/sounds/capture2.mp3'),
-                capture3: new Audio('assets/sounds/capture3.mp3'),
-                gameover: new Audio('assets/sounds/gameover.mp3'),
-                move1: new Audio('assets/sounds/move1.mp3'),
-                move2: new Audio('assets/sounds/move2.mp3'),
-                move3: new Audio('assets/sounds/move3.mp3'),
-                damage1: new Audio('assets/sounds/damage1.mp3'),
-                damage2: new Audio('assets/sounds/damage2.mp3'),
-                damage3: new Audio('assets/sounds/damage3.mp3'),
-                win: new Audio('assets/sounds/win.mp3'),
+                capture1: 'assets/sounds/capture1.mp3',
+                capture2: 'assets/sounds/capture2.mp3',
+                capture3: 'assets/sounds/capture3.mp3',
+                gameover: 'assets/sounds/gameover.mp3',
+                move1: 'assets/sounds/move1.mp3',
+                move2: 'assets/sounds/move2.mp3',
+                move3: 'assets/sounds/move3.mp3',
+                damage1: 'assets/sounds/damage1.mp3',
+                damage2: 'assets/sounds/damage2.mp3',
+                damage3: 'assets/sounds/damage3.mp3',
+                win: 'assets/sounds/win.mp3',
             }
         };
 
@@ -478,6 +479,11 @@
             restartButton.addEventListener('click', restartGame);
 
             createBoard();
+
+            // for each gameState.sounds, register it with createjs
+            for (const [soundID, sound] of Object.entries(gameState.sounds)) {
+                createjs.Sound.registerSound(sound, soundID);
+            }
         }
 
         // Create chess board
@@ -522,26 +528,19 @@
         }
 
         function playSound(type) {
-            let soundKey = '';
-            if (type==="move") {
+            let soundID = '';
+            if (type==="move" || type === "capture" || type === "damage") {
                 const soundNum = Math.floor(Math.random() * 3) + 1;
-                soundKey = `move${soundNum}`;
-            } else if (type === "capture") {
-                const soundNum = Math.floor(Math.random() * 3) + 1;
-                soundKey = `capture${soundNum}`;
-            } else if (type === "damage") {
-                const soundNum = Math.floor(Math.random() * 3) + 1;
-                soundKey = `damage${soundNum}`;
+                soundID = `${type}${soundNum}`;
             } else if (type === "gameover") {
-                soundKey = 'gameover';
+                soundID = 'gameover';
             } else if (type === "win") {
-                soundKey = 'win';
+                soundID = 'win';
             } else {
                 return
             }
 
-            gameState.sounds[soundKey].currentTime = 0;
-            gameState.sounds[soundKey].play().catch(e => console.log("Audio play error:", e));
+            createjs.Sound.play(soundID);
         }
 
         // Start the level (from current state)
