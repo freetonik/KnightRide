@@ -217,8 +217,9 @@
             border-radius: 20px;
             z-index: 10;
             pointer-events: none;
-            animation: fadeUp 1.6s forwards;
+            animation: fadeUp 2s forwards;
         }
+
 
         .points-indicator.positive {
             color: #2ecc71;
@@ -851,7 +852,7 @@
 
                     setTimeout(() => {
                         switchScreen('win-screen');
-                    }, 1000);
+                    }, 1600);
                 } else {
                     // Calculate possible moves for the new position
                     gameState.possibleMoves = calculatePossibleMoves(row, col);
@@ -1000,7 +1001,7 @@
             if (isMultiplier) {
                 // Special styling for multiplier
                 indicator.classList.add('multiplier-indicator');
-                indicator.textContent = points; // already formatted with × symbol
+                indicator.textContent = points;
             } else if (points > 0) {
                 indicator.classList.add('positive');
                 indicator.textContent = `+${points}`;
@@ -1016,7 +1017,7 @@
                 if (indicator.parentElement) {
                     cell.removeChild(indicator);
                 }
-            }, 1000);
+            }, 1600);
         }
 
         // Start the game
