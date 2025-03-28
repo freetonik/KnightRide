@@ -1,5 +1,7 @@
 # Knight Ride
 
+**PLAY HERE** → https://knightride.rakhim.org/
+
 Casual puzzle game about a knight gone rogue. Reach the target to win. Capture pieces to get points and additional moves. Level score = points × moves left. Beware of attackers!
 
 ![](screenshot.png)
