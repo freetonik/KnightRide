@@ -349,9 +349,18 @@
 
     <div id="win-screen" class="screen">
         <h1>Level Complete!</h1>
-        <p>Level score: <span id="win-points">0</span></p>
-        <p>Total: <span id="win-score">0</span></p>
+        <p style="border-bottom: 2px solid white; padding-bottom: 10px;">
+            Points earned: <span id="win-level-points">0</span>
+            <br>
+            Moves left: ×<span id="win-moves-multiplier">1</span>
+            <br>
+            Clean board bonus: ×<span id="win-clean-board-multiplier">1</span>
+        </p>
+
+        <p>Level score: <strong><span id="win-points">0</span></strong></p>
+
         <button id="next-level-button" class="button">Next Level</button>
+        <p>⭐ Running total: <span id="win-score">0</span> ⭐</p>
     </div>
 
     <div id="game-over-screen" class="screen">
@@ -460,8 +469,15 @@
         const currentScoreElement = document.getElementById('current-score');
         const movesElement = document.getElementById('moves');
         const highScoreElement = document.getElementById('high-score');
+
+        // ... Win screen elements
+        const winLevelPointsElement = document.getElementById('win-level-points');
+        const winMovesMultiplierElement = document.getElementById('win-moves-multiplier');
+        const winCleanBoardMultiplierElement = document.getElementById('win-clean-board-multiplier');
         const winPointsElement = document.getElementById('win-points');
         const winScoreElement = document.getElementById('win-score');
+
+        // ... Game over screen elements
         const finalScoreElement = document.getElementById('final-score');
         const gameOverHighScoreElement = document.getElementById('game-over-high-score');
 
@@ -473,7 +489,7 @@
         // Initialize the game
         function init() {
             // Load high score from local storage
-            gameState.highScore = parseInt(localStorage.getItem('knightsRunHighScore')) || 0;
+            gameState.highScore = parseInt(localStorage.getItem('knightRideHighScore')) || 0;
             highScoreElement.textContent = gameState.highScore;
 
             startButton.addEventListener('click', startGame);
@@ -852,7 +868,10 @@
                     // Update total score with the level score
                     gameState.score += levelScore;
 
-                    // Update UI for the level score and total score
+                    // Update UI for the win screen
+                    winLevelPointsElement.textContent = gameState.currentScore;
+                    winMovesMultiplierElement.textContent = bonusMultiplier;
+                    winCleanBoardMultiplierElement.textContent = cleanBoardBonusMultiplier;
                     winPointsElement.textContent = levelScore;
                     winScoreElement.textContent = gameState.score;
                     scoreElement.textContent = gameState.score;
@@ -860,13 +879,13 @@
                     // Update high score if needed
                     if (gameState.score > gameState.highScore) {
                         gameState.highScore = gameState.score;
-                        localStorage.setItem('knightsRunHighScore', gameState.highScore);
+                        localStorage.setItem('knightRideHighScore', gameState.highScore);
                         highScoreElement.textContent = gameState.highScore;
                     }
 
                     setTimeout(() => {
                         switchScreen('win-screen');
-                    }, 1600);
+                    }, 1300);
                 } else {
                     // Calculate possible moves for the new position
                     gameState.possibleMoves = calculatePossibleMoves(row, col);
@@ -1031,7 +1050,7 @@
                 if (indicator.parentElement) {
                     cell.removeChild(indicator);
                 }
-            }, 1600);
+            }, 1300);
         }
 
         // Start the game
