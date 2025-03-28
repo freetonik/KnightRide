@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knight Ride</title>
+    <link rel="shortcut icon" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuNTAxNCAxLjE1MzU5QzEwLjgxMTYgMC45NzUxNzcgMTEuMTkzNSAwLjk3NjEzIDExLjUwMjkgMS4xNTYwOUMxMi4zNDQ5IDEuNjQ2MDEgMTMuMTIzOCAyLjA1OTg1IDEzLjg1ODcgMi40NTAzTDEzLjg1ODcgMi40NTAzMUMxNC4wMzYgMi41NDQ0OSAxNC4yMTA3IDIuNjM3MzIgMTQuMzgzMSAyLjcyOTUzQzE1LjI1NzMgMy4xOTY5OSAxNi4wODIzIDMuNjUzNTQgMTYuODExIDQuMTY3NzdDMTguMzI0OCA1LjIzNjA4IDE5LjQxOTIgNi41NTM1IDE5Ljk3MDEgOC43NTc0QzIwLjUxMjEgMTAuOTI1NSAyMC4yMjEyIDEyLjg1OTkgMTkuODQyNCAxNC42NjFDMTkuNzcxMyAxNC45OTkgMTkuNjk3OSAxNS4zMyAxOS42MjU0IDE1LjY1NjdMMTkuNjI1NCAxNS42NTdMMTkuNjI1MyAxNS42NTcyQzE5LjM3NTIgMTYuNzg1MiAxOS4xMzY0IDE3Ljg2MjEgMTkuMDQyMiAxOUwxOS40MTE0IDE5TDE5Ljg0MTggMTlMMTkuOTU5MSAxOUgxOS45ODk2SDE5Ljk5NzRIMTkuOTk5NEgxOS45OTk4SDIwSDIwQzIwLjQzMDQgMTkgMjAuODEyNiAxOS4yNzU0IDIwLjk0ODcgMTkuNjgzOEwyMS43MjA3IDIySDIyQzIyLjU1MjMgMjIgMjMgMjIuNDQ3NyAyMyAyM0MyMyAyMy41NTIzIDIyLjU1MjMgMjQgMjIgMjRIMjFINC45OTk5OUgzLjk5OTk5QzMuNDQ3NyAyNCAyLjk5OTk5IDIzLjU1MjMgMi45OTk5OSAyM0MyLjk5OTk5IDIyLjQ0NzcgMy40NDc3IDIyIDMuOTk5OTkgMjJINC4yNzkyM0w1LjA1MTMgMTkuNjgzOEM1LjE4NzQyIDE5LjI3NTQgNS41Njk1NiAxOSA1Ljk5OTk5IDE5SDcuMzIyOTVMOC43NjkyNiAxNS4zODQyTDMuNTQwMSAxNi43NjAzQzIuNjI0NjEgMTcuMDAxMyAxLjY2NTYxIDE2LjU2NzMgMS4yNDIyNiAxNS43MjA2TDAuNDQ1NzQ1IDE0LjEyNzZDMC4wNDQ2MDc1IDEzLjMyNTMgMC4yMjQ2MzIgMTIuMzQ5OSAwLjg5OTA3MSAxMS43NDczQzEuNzA3MjggMTEuMDI1MiAzLjIzMDQzIDkuNjc0MTYgNC4zNTkzIDguNzMyMTlDNC44NDMgOC4zMjg1OCA1LjIwMDUxIDcuODYxNSA1LjUzNDI1IDcuMzQ0NzVDNS42NjgxMSA3LjEzNzQ5IDUuNzkxNTggNi45MzI5NiA1LjkyMTQ2IDYuNzE3NzhDNS45NTY5NCA2LjY1OTAxIDUuOTkyOSA2LjU5OTQ0IDYuMDI5NjcgNi41Mzg4MUM2LjE5NTc0IDYuMjY1MDMgNi4zNzU0OCA1Ljk3NDg3IDYuNTc0OTkgNS42OTYwNEM2Ljk3OTE3IDUuMTMxMTQgNy40OTI3MiA0LjU3MTQ3IDguMjQ3OTMgNC4xODAwNUM4Ljc1NTk2IDMuOTE2NzUgOS4zMzM0MSAzLjc1MDA0IDkuOTk5OTkgMy42ODIyNlYyLjAyMDQ1QzkuOTk5OTkgMS42NjI1OSAxMC4xOTEyIDEuMzMyMDEgMTAuNTAxNCAxLjE1MzU5Wk0xMC45ODA0IDE0LjgwMjRDMTEuMDE3NyAxNC45ODY3IDExLjAwMzUgMTUuMTgzNyAxMC45Mjg1IDE1LjM3MTRMOS40NzcwMiAxOUwxMS42NTQxIDE5TDE3LjAzNzIgMTlDMTcuMTM3NSAxNy42MjAyIDE3LjQyNCAxNi4zMzUxIDE3LjY4NzMgMTUuMTUzN0MxNy43NTYxIDE0Ljg0NTEgMTcuODIzMyAxNC41NDM2IDE3Ljg4NTIgMTQuMjQ5M0MxOC4yNDg5IDEyLjUyMDUgMTguNDU4IDEwLjk1NSAxOC4wMjk4IDkuMjQyNDdDMTcuNjEwNyA3LjU2NTgxIDE2LjgzNiA2LjYzMzI2IDE1LjY1NzggNS44MDE4NUMxNS4wNDA1IDUuMzY2MjIgMTQuMzEzOCA0Ljk2MDQ4IDEzLjQ0IDQuNDkzMTdDMTMuMjc1OSA0LjQwNTQyIDEzLjEwNjkgNC4zMTU2MyAxMi45MzMyIDQuMjIzNEwxMi45MzMyIDQuMjIzMzZMMTIuOTMzIDQuMjIzMjdMMTIuOTMyNSA0LjIyMjk5QzEyLjYzNDcgNC4wNjQ3OCAxMi4zMjMzIDMuODk5MzcgMTIgMy43MjQ2OFY0LjY1MzFDMTIgNC45MjQ5NSAxMS44ODkzIDUuMTg1MDkgMTEuNjkzNCA1LjM3MzZDMTEuNDk3NiA1LjU2MjEyIDExLjIzMzQgNS42NjI3NyAxMC45NjE3IDUuNjUyMzdDMTAuMDg4NCA1LjYxODk0IDkuNTQyOTkgNS43NjE1IDkuMTY4MjQgNS45NTU3M0M4Ljc5MzU3IDYuMTQ5OTEgOC41MDEyNCA2LjQ0MDkzIDguMjAxNTIgNi44NTk4M0M4LjA0OTA3IDcuMDcyODggNy45MDIzNCA3LjMwNzkgNy43Mzk2OCA3LjU3NjA3TDcuNjQxNzQgNy43MzgwOEw3LjY0MTcyIDcuNzM4MTJDNy41MDk5OCA3Ljk1NjQxIDcuMzY2MzUgOC4xOTQ0MyA3LjIxNDMyIDguNDI5ODJDNi44MjU5OSA5LjAzMTA5IDYuMzQxMzMgOS42ODMxNCA1LjY0MDY3IDEwLjI2NzhDNC41NDI1MiAxMS4xODQxIDMuMDQ1MzIgMTIuNTExOCAyLjIzNTYxIDEzLjIzNTJMMy4wMzExMSAxNC44MjYyTDExLjc0NTUgMTIuNTMyOUMxMi4yNzk2IDEyLjM5MjQgMTIuODI2NSAxMi43MTE0IDEyLjk2NzEgMTMuMjQ1NUMxMy4xMDc2IDEzLjc3OTYgMTIuNzg4NiAxNC4zMjY1IDEyLjI1NDUgMTQuNDY3MUwxMC45ODA0IDE0LjgwMjRaTTcgMjFIOUw5LjA1Nzc3IDIxTDExLjY1NDEgMjFMMTggMjFMMTkuMjc5MiAyMUwxOS42MTI2IDIySDYuMzg3NDFMNi43MjA3NSAyMUw3IDIxWk05LjUgMTFDMTAuMzI4NCAxMSAxMSAxMC4zMjg0IDExIDkuNUMxMSA4LjY3MTU3IDEwLjMyODQgOCA5LjUgOEM4LjY3MTU3IDggOCA4LjY3MTU3IDggOS41QzggMTAuMzI4NCA4LjY3MTU3IDExIDkuNSAxMVoiIGZpbGw9IiMwMDAwMDAiLz4NCjwvc3ZnPg==" />
+    <style>
+        :root {
+            --navy: #0a192f;
+            --yellow: #ffd700;
+            --light-navy: #172a45;
+            --white: #e6f1ff;
+            --board-size: min(80vw, 80vh);
+            --cell-size: calc(var(--board-size) / 8);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--navy);
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: var(--light-navy);
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            gap: 20px;
+        }
+
+        .screen h1 {
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .screen p {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        .button {
+            background-color: var(--yellow);
+            color: var(--navy);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+            margin: 10px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .button:active {
+            transform: translateY(1px);
+        }
+
+        #game-screen {
+            padding: 10px;
+        }
+
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            background-color: var(--light-navy);
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 2px solid var(--yellow);
+            min-width: 100px;
+            text-align: center;
+        }
+
+        .info-label {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--yellow);
+        }
+
+        .info-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(8, var(--cell-size));
+            grid-template-rows: repeat(8, var(--cell-size));
+            border: 5px solid var(--yellow);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .cell {
+            width: var(--cell-size);
+            height: var(--cell-size);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .cell.light {
+            background-color: #e8d0aa;
+        }
+
+        .cell.dark {
+            background-color: #b58863;
+        }
+
+        .cell.highlight {
+            background-color: rgba(255, 215, 0, 0.5);
+            animation: pulse 1.5s infinite;
+        }
+
+        .cell.target {
+            position: relative;
+        }
+
+        .cell.target::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,255,0,0.8) 0%, rgba(0,255,0,0.2) 70%, rgba(0,255,0,0) 100%);
+            animation: glow 2s infinite;
+            z-index: 1;
+        }
+
+        .piece {
+            width: 90%;
+            height: 90%;
+            position: relative;
+            z-index: 2;
+            user-select: none;
+            transition: transform 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .piece svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+        }
+
+        .points-indicator {
+            position: absolute;
+            color: white;
+            font-weight: bold;
+            background-color: rgba(10, 25, 47, 0.8);
+            padding: 5px 10px;
+            border-radius: 20px;
+            z-index: 10;
+            pointer-events: none;
+            animation: fadeUp 1.6s forwards;
+        }
+
+        .points-indicator.positive {
+            color: #2ecc71;
+        }
+
+        .points-indicator.negative {
+            color: #e74c3c;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+            20% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+
+        /* Piece capture (smoke explosion) animation */
+        @keyframes smokeExplosion {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+            25% {
+                opacity: 0.8;
+                transform: scale(1.2);
+                filter: blur(2px);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5);
+                filter: blur(5px);
+            }
+        }
+
+        .smoke-explosion {
+            animation: smokeExplosion 0.3s ease-out forwards;
+            position: absolute;
+            z-index: 5;
+        }
+
+        /* Style for the multiplier that appears when reaching target */
+        .multiplier-indicator {
+            color: #2ecc71 !important; /* Green color */
+            font-size: 2rem !important;
+            font-weight: bold !important;
+            text-shadow: 0 0 10px rgba(46, 204, 113, 0.5) !important;
+        }
+
+        .credits {
+            margin-top: 1em;
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --board-size: min(95vw, 95vw);
+            }
+
+            #game-screen {
+                flex-direction: column-reverse;
+            }
+
+            .game-info {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .info-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="start-screen" class="screen active">
+        <h1>Knight Ride</h1>
+        <p>Reach the target to win.</p>
+        <p>
+            Capture pieces for points and bonus moves.
+            <br>
+            Level score = points × moves left.
+            <br>
+            Beware of attackers!
+        </p>
+        <div>
+            <p>⭐ <strong>Your High Score: <span id="high-score">0</span></strong> ⭐</p>
+        </div>
+        <button id="start-button" class="button">Start Game</button>
+
+
+    </div>
+
+    <div id="credits" class="credits">
+        <p>Made by <a style="color:inherit;" href="https://rakhim.org">Rakhim D.</a></p>
+    </div>
+
+    <div id="game-screen" class="screen">
+        <div class="game-info">
+            <div class="info-box">
+                <div class="info-label">Level</div>
+                <div id="level" class="info-value">1</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Current Score</div>
+                <div id="current-score" class="info-value">0</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Moves</div>
+                <div id="moves" class="info-value">0</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Total Score</div>
+                <div id="score" class="info-value">0</div>
+            </div>
+        </div>
+        <div id="board"></div>
+    </div>
+
+    <div id="win-screen" class="screen">
+        <h1>Level Complete!</h1>
+        <p>Level score: <span id="win-points">0</span></p>
+        <p>Total: <span id="win-score">0</span></p>
+        <button id="next-level-button" class="button">Next Level</button>
+    </div>
+
+    <div id="game-over-screen" class="screen">
+        <h1>Game Over</h1>
+        <p>You ran out of moves!</p>
+        <p>Final score: <span id="final-score">0</span></p>
+        <p>High score: <span id="game-over-high-score">0</span></p>
+        <button id="restart-button" class="button">Play Again</button>
+    </div>
+
+    <script>
+        // Chess piece SVGs from Wikipedia (https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces)
+        const pieceSVGs = {
+            'knight': `<svg viewBox="5 5 77 77" xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+                <g style="opacity:1; fill:none; fill-opacity:1; fill-rule:evenodd; stroke:#000000; stroke-width:1.5; stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4; stroke-dasharray:none; stroke-opacity:1; transform: scale(1.9);">
+                    <path d="M 22,10 C 32.5,11 38.5,18 38,39 L 15,39 C 15,30 25,32.5 23,18" style="fill:#ffffff; stroke:#000000;" />
+                    <path d="M 24,18 C 24.38,20.91 18.45,25.37 16,27 C 13,29 13.18,31.34 11,31 C 9.958,30.06 12.41,27.96 11,28 C 10,28 11.19,29.23 10,30 C 9,30 5.997,31 6,26 C 6,24 12,14 12,14 C 12,14 13.89,12.1 14,10.5 C 13.27,9.506 13.5,8.5 13.5,7.5 C 14.5,6.5 16.5,10 16.5,10 L 18.5,10 C 18.5,10 19.28,8.008 21,7 C 22,7 22,10 22,10" style="fill:#ffffff; stroke:#000000;" />
+                    <path d="M 9.5 25.5 A 0.5 0.5 0 1 1 8.5,25.5 A 0.5 0.5 0 1 1 9.5 25.5 z" style="fill:#000000; stroke:#000000;" />
+                    <path d="M 15 15.5 A 0.5 1.5 0 1 1 14,15.5 A 0.5 1.5 0 1 1 15 15.5 z" transform="matrix(0.866,0.5,-0.5,0.866,9.693,-5.173)" style="fill:#000000; stroke:#000000;" />
+                </g>
+            </svg>`,
+            'pawn': `<svg viewBox="5 5 77 77" xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+                <path d="m 22.5,9 c -2.21,0 -4,1.79 -4,4 0,0.89 0.29,1.71 0.78,2.38 C 17.33,16.5 16,18.59 16,21 c 0,2.03 0.94,3.84 2.41,5.03 C 15.41,27.09 11,31.58 11,39.5 H 34 C 34,31.58 29.59,27.09 26.59,26.03 28.06,24.84 29,23.03 29,21 29,18.59 27.67,16.5 25.72,15.38 26.21,14.71 26.5,13.89 26.5,13 c 0,-2.21 -1.79,-4 -4,-4 z" style="opacity:1; fill:#000000; fill-opacity:1; fill-rule:nonzero; stroke:#000000; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:miter; stroke-miterlimit:4; stroke-dasharray:none; stroke-opacity:1; transform: scale(1.9);" />
+            </svg>`,
+            'bishop': `<svg viewBox="5 5 77 77" xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+                <g style="opacity:1; fill:none; fill-rule:evenodd; fill-opacity:1; stroke:#000000; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; stroke-miterlimit:4; stroke-dasharray:none; stroke-opacity:1; transform: scale(1.9);">
+                    <g style="fill:#000000; stroke:#000000; stroke-linecap:butt;">
+                        <path d="M 9,36 C 12.39,35.03 19.11,36.43 22.5,34 C 25.89,36.43 32.61,35.03 36,36 C 36,36 37.65,36.54 39,38 C 38.32,38.97 37.35,38.99 36,38.5 C 32.61,37.53 25.89,38.96 22.5,37.5 C 19.11,38.96 12.39,37.53 9,38.5 C 7.65,38.99 6.68,38.97 6,38 C 7.35,36.54 9,36 9,36 z"/>
+                        <path d="M 15,32 C 17.5,34.5 27.5,34.5 30,32 C 30.5,30.5 30,30 30,30 C 30,27.5 27.5,26 27.5,26 C 33,24.5 33.5,14.5 22.5,10.5 C 11.5,14.5 12,24.5 17.5,26 C 17.5,26 15,27.5 15,30 C 15,30 14.5,30.5 15,32 z"/>
+                        <path d="M 25 8 A 2.5 2.5 0 1 1  20,8 A 2.5 2.5 0 1 1  25 8 z"/>
+                    </g>
+                    <path d="M 17.5,26 L 27.5,26 M 15,30 L 30,30 M 22.5,15.5 L 22.5,20.5 M 20,18 L 25,18" style="fill:none; stroke:#ffffff; stroke-linejoin:miter;"/>
+                </g>
+            </svg>`,
+            'rook': `<svg viewBox="5 5 77 77" xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+                <g style="opacity:1; fill:#000000; fill-opacity:1; fill-rule:evenodd; stroke:#000000; stroke-width:1.5; stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4; stroke-dasharray:none; stroke-opacity:1; transform: scale(1.9);">
+                    <path d="M 9,39 L 36,39 L 36,36 L 9,36 L 9,39 z " style="stroke-linecap:butt;" />
+                    <path d="M 12,36 L 12,32 L 33,32 L 33,36 L 12,36 z " style="stroke-linecap:butt;" />
+                    <path d="M 11,14 L 11,9 L 15,9 L 15,11 L 20,11 L 20,9 L 25,9 L 25,11 L 30,11 L 30,9 L 34,9 L 34,14" style="stroke-linecap:butt;" />
+                    <path d="M 34,14 L 31,17 L 14,17 L 11,14" />
+                    <path d="M 31,17 L 31,29.5 L 14,29.5 L 14,17" style="stroke-linecap:butt; stroke-linejoin:miter;" />
+                    <path d="M 31,29.5 L 32.5,32 L 12.5,32 L 14,29.5" />
+                    <path d="M 11,14 L 34,14" style="fill:none; stroke:#ffffff; stroke-linejoin:miter;" />
+                </g>
+            </svg>`,
+            'queen': `<svg viewBox="5 5 77 77" xmlns="http://www.w3.org/2000/svg" version="1.1" width="45" height="45">
+                <g style="fill:#000000;stroke:#000000;stroke-width:1.5;stroke-linejoin:round;transform: scale(1.9);">
+                    <path d="M 9,26 C 17.5,24.5 30,24.5 36,26 L 38.5,13.5 L 31,25 L 30.7,10.9 L 25.5,24.5 L 22.5,10 L 19.5,24.5 L 14.3,10.9 L 14,25 L 6.5,13.5 L 9,26 z"/>
+                    <path d="M 9,26 C 9,28 10.5,28 11.5,30 C 12.5,31.5 12.5,31 12,33.5 C 10.5,34.5 11,36 11,36 C 9.5,37.5 11,38.5 11,38.5 C 17.5,39.5 27.5,39.5 34,38.5 C 34,38.5 35.5,37.5 34,36 C 34,36 34.5,34.5 33,33.5 C 32.5,31 32.5,31.5 33.5,30 C 34.5,28 36,28 36,26 C 27.5,24.5 17.5,24.5 9,26 z"/>
+                    <path d="M 11.5,30 C 15,29 30,29 33.5,30" style="fill:none; stroke:#ffffff;"/>
+                    <path d="M 12,33.5 C 18,32.5 27,32.5 33,33.5" style="fill:none; stroke:#ffffff;"/>
+                    <circle cx="6" cy="12" r="2" fill="#ffffff" />
+                    <circle cx="14" cy="9" r="2" fill="#ffffff" />
+                    <circle cx="22.5" cy="8" r="2" fill="#ffffff" />
+                    <circle cx="31" cy="9" r="2" fill="#ffffff" />
+                    <circle cx="39" cy="12" r="2" fill="#ffffff" />
+                </g>
+            </svg>`
+        };
+
+        const gameState = {
+            currentScreen: 'start-screen',
+            level: 1,
+            score: 0,       // Total score (accumulated across levels)
+            currentScore: 0, // Score for current level
+            highScore: 0,
+            movesLeft: 0,
+            knightPosition: null,
+            targetPosition: null,
+            selectedPiece: null,
+            pieces: [],
+            pieceValues: {
+                'pawn': 1,
+                'knight': 3,
+                'bishop': 3,
+                'rook': 5,
+                'queen': 9
+            },
+            possibleMoves: [],
+            sounds: {
+                capture1: new Audio('assets/sounds/capture1.mp3'),
+                capture2: new Audio('assets/sounds/capture2.mp3'),
+                capture3: new Audio('assets/sounds/capture3.mp3'),
+                gameover: new Audio('assets/sounds/gameover.mp3'),
+                move1: new Audio('assets/sounds/move1.mp3'),
+                move2: new Audio('assets/sounds/move2.mp3'),
+                move3: new Audio('assets/sounds/move3.mp3'),
+                damage1: new Audio('assets/sounds/damage1.mp3'),
+                damage2: new Audio('assets/sounds/damage2.mp3'),
+                damage3: new Audio('assets/sounds/damage3.mp3'),
+                win: new Audio('assets/sounds/win.mp3'),
+            }
+        };
+
+        // DOM Elements
+        const startScreen = document.getElementById('start-screen');
+        const gameScreen = document.getElementById('game-screen');
+        const winScreen = document.getElementById('win-screen');
+        const gameOverScreen = document.getElementById('game-over-screen');
+        const board = document.getElementById('board');
+
+        // UI Elements
+        const levelElement = document.getElementById('level');
+        const scoreElement = document.getElementById('score');
+        const currentScoreElement = document.getElementById('current-score');
+        const movesElement = document.getElementById('moves');
+        const highScoreElement = document.getElementById('high-score');
+        const winPointsElement = document.getElementById('win-points');
+        const winScoreElement = document.getElementById('win-score');
+        const finalScoreElement = document.getElementById('final-score');
+        const gameOverHighScoreElement = document.getElementById('game-over-high-score');
+
+        // Buttons
+        const startButton = document.getElementById('start-button');
+        const nextLevelButton = document.getElementById('next-level-button');
+        const restartButton = document.getElementById('restart-button');
+
+        // Initialize the game
+        function init() {
+            // Load high score from local storage
+            gameState.highScore = parseInt(localStorage.getItem('knightsRunHighScore')) || 0;
+            highScoreElement.textContent = gameState.highScore;
+
+            startButton.addEventListener('click', startGame);
+            nextLevelButton.addEventListener('click', startNextLevel);
+            restartButton.addEventListener('click', restartGame);
+
+            createBoard();
+        }
+
+        // Create chess board
+        function createBoard() {
+            board.innerHTML = '';
+            for (let row = 0; row < 8; row++) {
+                for (let col = 0; col < 8; col++) {
+                    const cell = document.createElement('div');
+                    cell.classList.add('cell');
+                    cell.classList.add((row + col) % 2 === 0 ? 'light' : 'dark');
+                    cell.dataset.row = row;
+                    cell.dataset.col = col;
+
+                    cell.addEventListener('click', handleCellClick);
+                    board.appendChild(cell);
+                }
+            }
+        }
+
+        function switchScreen(screenId) {
+            document.querySelector(`.screen.active`).classList.remove('active');
+            document.getElementById(screenId).classList.add('active');
+            gameState.currentScreen = screenId;
+        }
+
+        function startGame() {
+            document.getElementById('credits').style.display = 'none';
+            gameState.level = 1;
+            gameState.score = 0;
+            startLevel();
+        }
+
+        function startNextLevel() {
+            gameState.level += 1;
+            startLevel();
+        }
+
+        function restartGame() {
+            gameState.level = 1;
+            gameState.score = 0;
+            startLevel();
+        }
+
+        function playSound(type) {
+            let soundKey = '';
+            if (type==="move") {
+                const soundNum = Math.floor(Math.random() * 3) + 1;
+                soundKey = `move${soundNum}`;
+            } else if (type === "capture") {
+                const soundNum = Math.floor(Math.random() * 3) + 1;
+                soundKey = `capture${soundNum}`;
+            } else if (type === "damage") {
+                const soundNum = Math.floor(Math.random() * 3) + 1;
+                soundKey = `damage${soundNum}`;
+            } else if (type === "gameover") {
+                soundKey = 'gameover';
+            } else if (type === "win") {
+                soundKey = 'win';
+            } else {
+                return
+            }
+
+            gameState.sounds[soundKey].currentTime = 0;
+            gameState.sounds[soundKey].play().catch(e => console.log("Audio play error:", e));
+        }
+
+        // Start the level (from current state)
+        function startLevel() {
+            switchScreen('game-screen');
+
+            // Reset current score for the new level
+            gameState.currentScore = 0;
+
+            // Update UI
+            levelElement.textContent = gameState.level;
+            scoreElement.textContent = gameState.score;
+            currentScoreElement.textContent = gameState.currentScore;
+
+            // Clear the board
+            resetBoard();
+
+            // Determine number of pieces for this level
+            let numPieces = Math.min(gameState.level, 10);
+            if (gameState.level > 10) {
+                numPieces = 5 + Math.floor(Math.random() * 6); // Random between 5 and 10
+            }
+
+            // TODO: Set moves left based on level and/or number of pieces?
+            gameState.movesLeft = 10 + Math.floor(numPieces / 2);
+            movesElement.textContent = gameState.movesLeft;
+
+            placePieces(numPieces);
+        }
+
+        function resetBoard() {
+            const cells = document.querySelectorAll('.cell');
+            cells.forEach(cell => {
+                cell.innerHTML = '';
+                cell.classList.remove('highlight', 'target', 'possible-move');
+            });
+
+            gameState.pieces = [];
+            gameState.possibleMoves = [];
+            gameState.selectedPiece = null;
+        }
+
+        // Place N random pieces on the board, including the player's knight
+        function placePieces(numPieces) {
+            // Place knight at random position
+            const knightRow = Math.floor(Math.random() * 8);
+            const knightCol = Math.floor(Math.random() * 8);
+            gameState.knightPosition = { row: knightRow, col: knightCol };
+
+            // Place target at random position
+            let targetRow, targetCol;
+            do { // this will blow up in at least 1 parallel universe
+                targetRow = Math.floor(Math.random() * 8);
+                targetCol = Math.floor(Math.random() * 8);
+            } while (targetRow === knightRow && targetCol === knightCol);
+            gameState.targetPosition = { row: targetRow, col: targetCol };
+
+            // Mark the target
+            const targetCell = document.querySelector(`.cell[data-row="${targetRow}"][data-col="${targetCol}"]`);
+            targetCell.classList.add('target');
+
+            // Place the knight
+            const knightCell = document.querySelector(`.cell[data-row="${knightRow}"][data-col="${knightCol}"]`);
+            const knightPiece = document.createElement('div');
+            knightPiece.classList.add('piece');
+            knightPiece.innerHTML = pieceSVGs['knight'];
+            knightPiece.dataset.type = 'knight';
+            knightPiece.dataset.row = knightRow;
+            knightPiece.dataset.col = knightCol;
+
+            knightCell.appendChild(knightPiece);
+
+            // Place other pieces
+            if (numPieces > 0) {
+                const pieceTypes = ['pawn', 'bishop', 'rook', 'queen'];
+
+                for (let i = 0; i < numPieces; i++) {
+                    let row, col, type;
+                    do {
+                        row = Math.floor(Math.random() * 8);
+                        col = Math.floor(Math.random() * 8);
+                        // Don't place on knight or target
+                        if ((row === knightRow && col === knightCol) ||
+                            (row === targetRow && col === targetCol)) {
+                            continue;
+                        }
+
+                        // Check if cell is already occupied
+                        if (document.querySelector(`.cell[data-row="${row}"][data-col="${col}"] .piece`)) {
+                            continue;
+                        }
+
+                        // Randomly choose piece type (more pawns than other pieces)
+                        const rand = Math.random();
+                        if (rand < 0.5) type = 'pawn';
+                        else if (rand < 0.7) type = 'bishop';
+                        else if (rand < 0.9) type = 'rook';
+                        else type = 'queen';
+
+                        break;
+                    } while (true);
+
+                    // Create and place the piece
+                    const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+                    const piece = document.createElement('div');
+                    piece.classList.add('piece');
+                    piece.innerHTML = pieceSVGs[type];
+                    piece.dataset.type = type;
+                    piece.dataset.row = row;
+                    piece.dataset.col = col;
+
+                    cell.appendChild(piece);
+
+                    // Add to pieces array
+                    gameState.pieces.push({
+                        type,
+                        row,
+                        col
+                    });
+                }
+            }
+
+            // Calculate possible moves for knight
+            gameState.possibleMoves = calculatePossibleMoves(knightRow, knightCol);
+        }
+
+        // Handle cell click
+        function handleCellClick(event) {
+            const cell = event.currentTarget;
+            const row = parseInt(cell.dataset.row);
+            const col = parseInt(cell.dataset.col);
+
+            // Get the current knight position
+            const knightRow = gameState.knightPosition.row;
+            const knightCol = gameState.knightPosition.col;
+
+            // Calculate all possible knight moves and check if this is one of them
+            const possibleMoves = calculatePossibleMoves(knightRow, knightCol);
+
+            // If the clicked cell is a valid move, move the knight there
+            if (possibleMoves.some(move => move.row === row && move.col === col)) {
+                moveKnight(row, col);
+            }
+        }
+
+        // Compute legal knight moves
+        function calculatePossibleMoves(row, col) {
+            const moveOffsets = [
+                { row: -2, col: -1 }, { row: -2, col: 1 },
+                { row: -1, col: -2 }, { row: -1, col: 2 },
+                { row: 1, col: -2 }, { row: 1, col: 2 },
+                { row: 2, col: -1 }, { row: 2, col: 1 }
+            ];
+
+            const possibleMoves = [];
+
+            // Check each possible move
+            moveOffsets.forEach(offset => {
+                const newRow = row + offset.row;
+                const newCol = col + offset.col;
+
+                // Check if move is on the board
+                if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+                    possibleMoves.push({ row: newRow, col: newCol });
+                }
+            });
+
+            return possibleMoves;
+        }
+
+        // Check if a move is possible
+        function isPossibleMove(row, col) {
+            return gameState.possibleMoves.some(move => move.row === row && move.col === col);
+        }
+
+        // Move the knight
+        function moveKnight(row, col) {
+            // Get knight piece
+            const knightPiece = document.querySelector('.piece[data-type="knight"]');
+
+            // Get old and new cells
+            const oldCell = document.querySelector(`.cell[data-row="${gameState.knightPosition.row}"][data-col="${gameState.knightPosition.col}"]`);
+            const newCell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+
+            // Check if there's a piece to capture
+            const capturePiece = newCell.querySelector('.piece:not([data-type="knight"])');
+            let capturePoints = 0;
+            let capturePieceType = null;
+
+            if (capturePiece) {
+                capturePieceType = capturePiece.dataset.type;
+                capturePoints = gameState.pieceValues[capturePieceType];
+                newCell.removeChild(capturePiece);
+
+                // Remove from pieces array
+                gameState.pieces = gameState.pieces.filter(p =>
+                    !(p.row === row && p.col === col));
+            }
+
+            // Check if knight is attacked after move
+            const attackingPieces = checkForAttacks(row, col);
+            let attackPoints = 0;
+
+            // Only count attack points if no piece was captured
+            if (!capturePiece && attackingPieces.length > 0) {
+                // Calculate attack points
+                attackPoints = 1; // for now just 1 flat point if under attack
+                if ( !(row === gameState.targetPosition.row && col === gameState.targetPosition.col))
+                    playSound('damage');
+                // Maybe sum of all attacking pieces?
+                // attackPoints = attackingPieces.reduce((sum, piece) => {
+                //     return sum + gameState.pieceValues[piece.type];
+                // }, 0);
+            }
+
+            // Calculate net points
+            const netPoints = capturePoints - attackPoints;
+
+            // Update current score
+            if (netPoints !== 0) {
+                gameState.currentScore += netPoints;
+                showPointsIndicator(newCell, netPoints);
+            }
+
+            // CAPTURE!
+            if (capturePiece) {
+                gameState.movesLeft += 1;
+
+                playSound('capture')
+
+                // Create a clone of the captured piece for the smoke effect
+                const capturedPieceClone = capturePiece.cloneNode(true);
+                capturedPieceClone.classList.add('smoke-explosion');
+                newCell.appendChild(capturedPieceClone);
+
+                // Remove the smoke effect after animation completes
+                setTimeout(() => {
+                    if (capturedPieceClone.parentElement) {
+                        newCell.removeChild(capturedPieceClone);
+                    }
+                }, 1300);
+            } else {
+                // Play regular move sound (except for target square which has its own win sound)
+                if (!(row === gameState.targetPosition.row && col === gameState.targetPosition.col) && attackPoints === 0) {
+                    playSound('move')
+                }
+            }
+
+            // Update knight's position
+            oldCell.removeChild(knightPiece);
+            knightPiece.dataset.row = row;
+            knightPiece.dataset.col = col;
+            newCell.appendChild(knightPiece);
+            gameState.knightPosition = { row, col };
+
+            // Decrease moves left
+            gameState.movesLeft -= 1;
+            movesElement.textContent = gameState.movesLeft;
+
+            // Update current score display
+            currentScoreElement.textContent = gameState.currentScore;
+
+            // Check game over
+            if (gameState.movesLeft <= 0 && !(row === gameState.targetPosition.row && col === gameState.targetPosition.col)) {
+                finalScoreElement.textContent = gameState.score;
+                gameOverHighScoreElement.textContent = gameState.highScore;
+                playSound("gameover");
+                switchScreen('game-over-screen');
+
+                setTimeout(() => {
+                    switchScreen('game-over-screen');
+                }, 500);
+            } else { // omg win
+                if (row === gameState.targetPosition.row && col === gameState.targetPosition.col) {
+                    playSound('win')
+
+                    let levelScore = 1;
+
+                    let bonusMultiplier = gameState.movesLeft; // TODO: maybe don't count the last move?
+                    if (bonusMultiplier === 0) bonusMultiplier = 1; // at least 1x bonus
+
+                    // Ensure current score is at least 1 before applying multiplier
+                    if (gameState.currentScore > 1)
+                        levelScore = gameState.currentScore * bonusMultiplier;
+                    else
+                        levelScore = 1 * bonusMultiplier;
+
+                    // Show score×multiplier indicator
+                    if (gameState.currentScore > 1 && bonusMultiplier > 0)
+                        showPointsIndicator(newCell, `${gameState.currentScore}×${bonusMultiplier}`, true);
+                    else
+                        showPointsIndicator(newCell, levelScore);
+
+                    // Update total score with the level score
+                    gameState.score += levelScore;
+
+                    // Update UI for the level score and total score
+                    winPointsElement.textContent = levelScore;
+                    winScoreElement.textContent = gameState.score;
+                    scoreElement.textContent = gameState.score;
+
+                    // Update high score if needed
+                    if (gameState.score > gameState.highScore) {
+                        gameState.highScore = gameState.score;
+                        localStorage.setItem('knightsRunHighScore', gameState.highScore);
+                        highScoreElement.textContent = gameState.highScore;
+                    }
+
+                    setTimeout(() => {
+                        switchScreen('win-screen');
+                    }, 1000);
+                } else {
+                    // Calculate possible moves for the new position
+                    gameState.possibleMoves = calculatePossibleMoves(row, col);
+                }
+            }
+        }
+
+        // Check which pieces are attacking a square
+        function checkForAttacks(row, col) {
+            const attackingPieces = [];
+            gameState.pieces.forEach(piece => {
+                if (isAttacking(piece, row, col)) {
+                    attackingPieces.push(piece);
+                }
+            });
+
+            return attackingPieces;
+        }
+
+        // Check if a piece is attacking a square
+        function isAttacking(piece, targetRow, targetCol) {
+            const { type, row, col } = piece;
+
+            switch (type) {
+                case 'pawn':
+                    // Since enemies are black, pawn attacks the bottom row
+                    return (Math.abs(col - targetCol) === 1 &&
+                           (targetRow - row === 1));
+
+                case 'knight':
+                    // Knights move in L-shape
+                    const rowDiff = Math.abs(row - targetRow);
+                    const colDiff = Math.abs(col - targetCol);
+                    return (rowDiff === 1 && colDiff === 2) || (rowDiff === 2 && colDiff === 1);
+
+                case 'bishop':
+                    // Bishops move diagonally
+                    if (Math.abs(row - targetRow) !== Math.abs(col - targetCol)) {
+                        return false;
+                    }
+
+                    // Check if path is clear
+                    const rowStep = targetRow > row ? 1 : -1;
+                    const colStep = targetCol > col ? 1 : -1;
+
+                    let checkRow = row + rowStep;
+                    let checkCol = col + colStep;
+
+                    while (checkRow !== targetRow && checkCol !== targetCol) {
+                        // Check if there's a piece in the way
+                        if (isPieceAt(checkRow, checkCol)) {
+                            return false;
+                        }
+
+                        checkRow += rowStep;
+                        checkCol += colStep;
+                    }
+
+                    return true;
+
+                case 'rook':
+                    // Rooks move horizontally and vertically
+                    if (row !== targetRow && col !== targetCol) {
+                        return false;
+                    }
+
+                    // Check if path is clear
+                    if (row === targetRow) {
+                        const step = targetCol > col ? 1 : -1;
+                        for (let c = col + step; c !== targetCol; c += step) {
+                            if (isPieceAt(row, c)) {
+                                return false;
+                            }
+                        }
+                    } else {
+                        const step = targetRow > row ? 1 : -1;
+                        for (let r = row + step; r !== targetRow; r += step) {
+                            if (isPieceAt(r, col)) {
+                                return false;
+                            }
+                        }
+                    }
+
+                    return true; // kinda weird inversion of logic but whatever
+
+                case 'queen':
+                    // Queens move like rooks and bishops combined
+                    // Check if move is horizontal/vertical
+                    if (row === targetRow || col === targetCol) {
+                        // Check like a rook
+                        if (row === targetRow) {
+                            const step = targetCol > col ? 1 : -1;
+                            for (let c = col + step; c !== targetCol; c += step) {
+                                if (isPieceAt(row, c)) {
+                                    return false;
+                                }
+                            }
+                        } else {
+                            const step = targetRow > row ? 1 : -1;
+                            for (let r = row + step; r !== targetRow; r += step) {
+                                if (isPieceAt(r, col)) {
+                                    return false;
+                                }
+                            }
+                        }
+
+                        return true;
+                    }
+                    // Check if move is diagonal
+                    else if (Math.abs(row - targetRow) === Math.abs(col - targetCol)) {
+                        // Check like a bishop
+                        const rowStep = targetRow > row ? 1 : -1;
+                        const colStep = targetCol > col ? 1 : -1;
+
+                        let checkRow = row + rowStep;
+                        let checkCol = col + colStep;
+
+                        while (checkRow !== targetRow && checkCol !== targetCol) {
+                            if (isPieceAt(checkRow, checkCol)) {
+                                return false;
+                            }
+
+                            checkRow += rowStep;
+                            checkCol += colStep;
+                        }
+
+                        return true;
+                    }
+
+                    return false;
+            }
+
+            return false;
+        }
+
+        // Check if there's a piece at a specific position
+        function isPieceAt(row, col) {
+            return gameState.pieces.some(p => p.row === row && p.col === col);
+        }
+
+        // Show points indicator
+        function showPointsIndicator(cell, points, isMultiplier = false) {
+            const indicator = document.createElement('div');
+            indicator.classList.add('points-indicator');
+
+            if (isMultiplier) {
+                // Special styling for multiplier
+                indicator.classList.add('multiplier-indicator');
+                indicator.textContent = points; // already formatted with × symbol
+            } else if (points > 0) {
+                indicator.classList.add('positive');
+                indicator.textContent = `+${points}`;
+            } else {
+                indicator.classList.add('negative');
+                indicator.textContent = points;
+            }
+
+            cell.appendChild(indicator);
+
+            // Remove after animation
+            setTimeout(() => {
+                if (indicator.parentElement) {
+                    cell.removeChild(indicator);
+                }
+            }, 1000);
+        }
+
+        // Start the game
+        init();
+    </script>
+</body>
+</html>
