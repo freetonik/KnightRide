@@ -838,7 +838,7 @@
 
                     // Show score×multiplier indicator
                     if (gameState.currentScore > 1 && bonusMultiplier > 0) {
-                        if (cleanBoardBonusMultiplier > 0) {
+                        if (cleanBoardBonusMultiplier > 1) {
                             showPointsIndicator(newCell, `${gameState.currentScore}×${bonusMultiplier}×${cleanBoardBonusMultiplier} CLEAN BOARD!`, true);
                         } else {
                             showPointsIndicator(newCell, `${gameState.currentScore}×${bonusMultiplier}`, true);
