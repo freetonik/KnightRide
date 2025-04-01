@@ -307,13 +307,15 @@
 <body>
     <div id="start-screen" class="screen active">
         <h1>Knight Ride</h1>
-        <p>Reach the target to win.</p>
+        <p>Reach the target within the given number of moves.</p>
         <p>
-            Capture pieces for points and bonus moves.
-            <br>
-            Level score = points × moves left.
-            <br>
-            Beware of attackers!
+            Each captured piece gives you points and +1 additional move.
+            Capture 2 or more pieces in a streak to get bonus points.
+            Lose one point when you move to an attacked square.
+        </p>
+        <p>
+            <u>Level score = Points × Remaining Moves</u>
+            <br>Double if you captured all the pieces!
         </p>
         <div>
             <p>⭐ <strong>Your High Score: <span id="high-score">0</span></strong> ⭐</p>
@@ -529,7 +531,22 @@
             gameState.currentScreen = screenId;
         }
 
+        function showDonationWidget() {
+            const w = document.getElementsByClassName('floatingchat-container-wrap');
+            if (w[0] && w[0].style) {
+                w[0].style.display = "block";
+            }
+        }
+
+        function hideDonationWidget() {
+            const w = document.getElementsByClassName('floatingchat-container-wrap');
+            if (w[0] && w[0].style) {
+                w[0].style.display = "none";
+            }
+        }
+
         function startGame() {
+            hideDonationWidget();
             document.getElementById('credits').style.display = 'none';
             gameState.level = 1;
             gameState.score = 0;
@@ -834,6 +851,7 @@
 
                 setTimeout(() => {
                     switchScreen('game-over-screen');
+                    showDonationWidget();
                 }, 500);
             } else { // omg win
                 if (row === gameState.targetPosition.row && col === gameState.targetPosition.col) {
@@ -1058,5 +1076,15 @@
         // Start the game
         init();
     </script>
+
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('rakhimd', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#5bc0de',
+    'floating-chat.donateButton.text-color': '#323842'
+  });
+</script>
 </body>
 </html>
