@@ -307,16 +307,30 @@
 <body>
     <div id="start-screen" class="screen active">
         <h1>Knight Ride</h1>
-        <p>Reach the target within the given number of moves.</p>
+        <p>Get your knight to the target square.</p>
         <p>
-            Each captured piece gives you points and +1 additional move.
-            Capture 2 or more pieces in a streak to get bonus points.
-            Lose one point when you move to an attacked square.
+            Earn points for getting there quickly without being attacked, and capturing pieces on the way.
         </p>
         <p>
             <u>Level score = Points × Remaining Moves</u>
-            <br>Double if you captured all the pieces!
         </p>
+        <details>
+            <summary>Full rules</summary>
+            <p>
+                    Complete each level by reaching the target within the given number of moves.
+                    Each piece you capture gives you +1 move, and points based on the piece
+                    (Pawn: 1 point. Knight or Bishop: 3. Rook: 5. Queen: 9.)
+                </p>
+            <p>
+                    Capture 2 or more pieces in a streak to get bonus points (bonus is the length of the streak).
+                    Lose 1 point when you move to an attacked square.
+                    Double your points when you capture all the pieces.
+            </p>
+            <p>
+                    Out of moves? Game over!
+
+            </p>
+          </details>
         <div>
             <p>⭐ <strong>Your High Score: <span id="high-score">0</span></strong> ⭐</p>
         </div>
